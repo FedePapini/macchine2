@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #0e1c3d);
+  color: #ffffff;
+}
+
+.topbar {
+  text-align: center;
+  padding: 1.8rem;
+  background: rgba(15,23,42,0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(148,163,184,0.2);
+}
+
+.logo-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .7rem;
+}
+
+.logo {
+  width: 36px;
+}
+
+.subtitle {
+  opacity: .7;
+}
+
+.card {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(15,23,42,0.9);
+  border-radius: 18px;
+  border: 1px solid rgba(148,163,184,.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
+
+input {
+  width: 100%;
+  padding: .7rem;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.brands-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+
+.brand-pill {
+  padding: .5rem 1rem;
+  border-radius: 20px;
+  background: #1e293b;
+  border: 1px solid #475569;
+  cursor: pointer;
+  color: #e2e8f0;
+}
+
+.brand-pill.selected {
+  background: #38bdf8;
+  color: lch(7.96% 14.45 283.28);
+}
+
+.models-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 1rem;
+}
+
+.model-card {
+  background: #909294;
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid #475569;
+  text-align: center;
+}
+
+.model-image {
+  width: 100%;
+  border-radius: 12px;
+  background: #0f172a;
+}
+
+.model-subtitle {
+  opacity: .7;
+}

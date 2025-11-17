@@ -1,0 +1,50 @@
+<header class="topbar">
+  <div class="logo-area">
+    <svg class="logo" viewBox="0 0 24 24">
+      <path d="M2 16h20l-4-6h-6l-2-4H4z" fill="#38bdf8"/>
+    </svg>
+    <h1>Car Finder</h1>
+  </div>
+  <span class="subtitle">Catalogo auto — Marche & Modelli</span>
+</header>
+
+<section class="card search-card">
+  <h2>Cerca una marca</h2>
+
+  <input
+    [(ngModel)]="brandSearch"
+    (input)="filterMakes()"
+    placeholder="Scrivi una marca (BMW, Tesla, Fiat...)"
+  />
+
+  <div *ngIf="loadingMakes" class="loading">Caricamento marche...</div>
+
+  <div class="brands-list" *ngIf="!loadingMakes">
+    <button
+      class="brand-pill"
+      *ngFor="let make of filteredMakes"
+      (click)="selectMake(make.Make_Name)"
+      [class.selected]="make.Make_Name === selectedMake"
+    >
+      {{ make.Make_Name }}
+    </button>
+  </div>
+</section>
+
+<section class="card models-card" *ngIf="selectedMake">
+  <h2>Modelli {{ selectedMake }}</h2>
+
+  <div *ngIf="loadingModels" class="loading">Sto caricando i modelli...</div>
+
+  <div class="models-grid" *ngIf="!loadingModels">
+    <div class="model-card" *ngFor="let m of models">
+      <img
+        class="model-image"
+        [src]="getCarImage(selectedMake, m.Model_Name)"
+        [alt]="selectedMake + ' ' + m.Model_Name"
+      />
+      <h3>{{ m.Model_Name }}</h3>
+      <p class="model-subtitle">{{ selectedMake }}</p>
+    </div>
+  </div>
+</section>
